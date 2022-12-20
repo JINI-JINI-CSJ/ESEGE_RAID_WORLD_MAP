@@ -7,9 +7,6 @@ using UnityEditor;
 public class Menu_WorldMap : EditorWindow
 {
 
-
-
-
     [MenuItem("ESEGE/WorldMap/Parse Image")]
     static public   void    WorldMap_ParseImage()
     {   
@@ -38,7 +35,7 @@ public class Menu_WorldMap : EditorWindow
     {
         Base_CityTownGenerator comp = Menu_SJ_Tile2D.GetComponent_Select<Base_CityTownGenerator>();
         if( comp == null ) return;
-        comp.Work_BorderLine();
+        //comp.Work_BorderLine();
     }
 
     [MenuItem("ESEGE/Town/LoadLine")]
@@ -46,7 +43,7 @@ public class Menu_WorldMap : EditorWindow
     {
         Base_CityTownGenerator comp = Menu_SJ_Tile2D.GetComponent_Select<Base_CityTownGenerator>();
         if( comp == null ) return;
-        comp.Work_LineContent();
+        //comp.Work_LineContent();
     }
 
     [MenuItem("ESEGE/Town/Area")]
@@ -54,6 +51,6 @@ public class Menu_WorldMap : EditorWindow
     {
         Base_CityTownGenerator comp = Menu_SJ_Tile2D.GetComponent_Select<Base_CityTownGenerator>();
         if( comp == null ) return;
-        comp.Work_AREA_CONTENT();
+        //comp.Work_AREA_CONTENT();
     }
 }

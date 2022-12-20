@@ -20,6 +20,30 @@ public class SJ_TileCommon
         }
     }
 
+    public  static  Vector2Int  Random_Vec2Int( int val )
+    {
+        Vector2Int vi = new Vector2Int();
+        vi.x = UnityEngine.Random.Range( 0,val+1 );
+        vi.y = UnityEngine.Random.Range( 0,val+1 );
+        return vi;
+    }
+
+    public  static  Vector2Int  Random_Vec2Int_Rect( RectInt rc )
+    {
+        Vector2Int vi = new Vector2Int();
+        vi.x = UnityEngine.Random.Range( rc.xMin,rc.xMax+1 );
+        vi.y = UnityEngine.Random.Range( rc.yMin,rc.yMax+1 );
+        return vi;
+    }
+
+    public  static  Vector2Int  Random_Vec2Int_Rect( Vector2Int ct , int size_x , int size_y )
+    {
+        ct.x -= (size_x / 2);
+        ct.y -= (size_y / 2);        
+        RectInt rc = new RectInt(ct.x , ct.y , size_x , size_y);
+        return Random_Vec2Int_Rect( rc );
+    }
+
     static  public  bool    Check_TilemapEmpty( Tilemap tilemap , int sx , int sy , int w , int h )
     {
         for( int y = sy ; y < sy + h + 1 ; y++ )

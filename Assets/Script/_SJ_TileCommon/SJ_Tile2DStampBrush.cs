@@ -208,8 +208,10 @@ public class SJ_Tile2DStampBrush : MonoBehaviour
         return true;        
     }
 
-    public  void    Work_Fill_AreaRandom()
+    public  void    Work_Fill_AreaRandom( Tilemap _tilemap = null )
     {
+        Tilemap tm = tilemap_fill_AreaRandom;
+        if( _tilemap != null ) tm = _tilemap;
         _TILE_STAMP_BRUSH ts = lt_stamp_brush[0];
         for( int y = 0 ; y <= fill_AreaRandom_y ; y++ )
         {
@@ -217,7 +219,7 @@ public class SJ_Tile2DStampBrush : MonoBehaviour
             {
                 int idx = UnityEngine.Random.Range( 0 , ts.lt_tb.Count );
                 TileBase tb = ts.lt_tb[idx].tb;
-                tilemap_fill_AreaRandom.SetTile( new Vector3Int( x,y,0 ) , tb );
+                tm.SetTile( new Vector3Int( x,y,0 ) , tb );
             }
         }
     }

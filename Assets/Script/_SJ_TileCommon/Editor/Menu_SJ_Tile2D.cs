@@ -87,8 +87,7 @@ public class Menu_SJ_Tile2D : EditorWindow
     static public   void    Tile2DStampBrush_FillAreaRandom()
     {
         SJ_Tile2DStampBrush comp = GetComponent_Select<SJ_Tile2DStampBrush>();
-        if( comp != null )
-            comp.Work_Fill_AreaRandom();
+        if( comp != null )comp.Work_Fill_AreaRandom();
     }
 
     [MenuItem("SJ_Menu/Tile2DFill_8Side/Tile2DFill_8Side_Test")]
